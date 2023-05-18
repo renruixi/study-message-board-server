@@ -1,6 +1,10 @@
 const router = require('koa-router')()
 
 router.get('/', async (ctx, next) => {
+  console.log('进入首页')
+  setInterval(function(){
+    console.log('定时任务执行')
+  },3000)
   await ctx.render('index', {
     title: 'Hello Koa 2!'
   })
