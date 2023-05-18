@@ -2,7 +2,7 @@ const router = require('koa-router')()
 const schedule = require('node-schedule');
 
 router.get('/', async (ctx, next) => {
-  schedule.scheduleJob(`10 * * * * *`, function(){
+  schedule.scheduleJob('10 * * * * *', function(){
     console.log('定时任务执行')
   });
   await ctx.render('index', {
